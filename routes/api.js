@@ -13,7 +13,7 @@ router.post("/api/workout", ({ body }, res) => {
 });
 
 router.put("/api/workout/:id", ({ body, params }, res) => {
-  Workout.updateOne({ _id: params.id }, { $push: { Workout: body } })
+  Workout.updateOne({ _id: params.id })
     .then((dbWorkout) => {
       res.json(dbWorkout);
     })
